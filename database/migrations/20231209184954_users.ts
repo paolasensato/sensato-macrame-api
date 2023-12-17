@@ -23,7 +23,7 @@ export async function up(knex: Knex): Promise<void> {
     table.boolean('status')
       .defaultTo(true);
 
-    table.timestamps(true, false);
+    table.timestamps(true, true);
     table.dateTime('deleted_at')
       .index();
   });
