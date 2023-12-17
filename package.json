@@ -7,8 +7,7 @@
     "dev": "nodemon src/index.ts",
     "migrate:make": "knex migrate:make --knexfile ./database/knexfile.ts -x ts",
     "migrate:latest": "knex migrate:latest --knexfile ./database/knexfile.ts",
-    "migrate:rollback": "knex migrate:rollback --knexfile ./database/knexfile.ts",
-    "vercel-build": "knex --knexfile migrate:latest ./database/knexfile.ts"
+    "migrate:rollback": "knex migrate:rollback --knexfile ./database/knexfile.ts"
   },
   "keywords": [],
   "author": "Paola Sensato",
