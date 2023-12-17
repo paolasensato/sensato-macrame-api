@@ -4,10 +4,12 @@
   "description": "Projeto pessoal para gerenciamento de produtos e materials de macramê.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.ts",
+    "dev": "nodemon src/index.ts",
     "migrate:make": "knex migrate:make --knexfile ./database/knexfile.ts -x ts",
     "migrate:latest": "knex migrate:latest --knexfile ./database/knexfile.ts",
-    "migrate:rollback": "knex migrate:rollback --knexfile ./database/knexfile.ts"
+    "migrate:rollback": "knex migrate:rollback --knexfile ./database/knexfile.ts",
+    "build": "tsc",
+    "start": "node dist/src/index.js"
   },
   "keywords": [],
   "author": "Paola Sensato",

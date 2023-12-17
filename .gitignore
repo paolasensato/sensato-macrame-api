@@ -13,3 +13,4 @@
 # Variables
 *.env*
 !.env.example
+.vercel
