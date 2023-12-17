@@ -17,7 +17,6 @@ const {
   DB_PORT,
   DB_USER,
   DB_PASS,
-  TZ,
 } = process.env;
 
 const config: IKnexConfig = {
@@ -30,7 +29,7 @@ const config: IKnexConfig = {
       port: Number(DB_PORT),
       user: DB_USER,
       password: DB_PASS,
-      timezone: format(new Date(), 'xxx', { timeZone: TZ })
+      timezone: format(new Date(), 'xxx', { timeZone: 'UTC' })
     },
     migrations: {
       tableName: 'knex_migrations',
