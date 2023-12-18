@@ -8,10 +8,12 @@ export enum UserType {
 
 const createUserSchema = Joi.object({
   name: Joi.string()
+    .trim()
     .max(200)
     .required(),
   email: Joi.string()
-    .max(256)
+    .trim()
+    .max(200)
     .email({ 
       minDomainSegments: 2,
       tlds: { allow: false }
@@ -26,6 +28,20 @@ const createUserSchema = Joi.object({
     .required(),
 });
 
+const loginSchema = Joi.object({
+  email: Joi.string()
+    .trim()
+    .max(200)
+    .required(),
+  password: Joi.string()
+    .trim()
+    .min(6)
+    .max(100)
+    .required(),
+});
+
+
 export {
-  createUserSchema
+  createUserSchema,
+  loginSchema
 };

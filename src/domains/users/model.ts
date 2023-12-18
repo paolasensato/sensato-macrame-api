@@ -43,14 +43,6 @@ class User extends Model {
     }
   }
 
-  isPasswordCorrect(password: string): boolean {
-    try {
-      return bcrypt.compareSync(password, this.password);
-    } catch (error) {
-      return false;
-    }
-  }
-
   get $hiddenFields(): string[] {
     return ['password'];
   }
